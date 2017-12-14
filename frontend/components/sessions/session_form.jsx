@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
       formHeader = 'Sign In';
       usernameField = '';
       linkTo =
-        <p>New to Netclips? <Link to='signup'
+        <p>New to webflix? <Link to='signup'
           className='session-link sign'>Sign up now.</Link>
         </p>;
       signinGuest =

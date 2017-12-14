@@ -1,0 +1,17 @@
+.logo {
+	border: 0;
+	float: left;
+  background: image-url('logo_final.png');
+  background-size: cover;
+  cursor: pointer;
+  &.nav-logo {
+    height: 30px;
+    width: 115px;
+    margin: 15px 58px;
+  }
+	&.entry-logo {
+		height: 50px;
+		width: 190px;
+		margin: 20px 58px;
+	}
+}

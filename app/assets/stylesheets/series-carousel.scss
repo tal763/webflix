@@ -1,0 +1,219 @@
+$duration: 450ms;
+$tileWidth: 16vw;
+$tileHeight: 9vw;
+$iconSize: 50px;
+$growSize: 1.7;
+
+$moveRight: ($tileWidth / 1.4 );
+
+.series-page {
+  position: absolute;
+  left: -100%;
+  display: none;
+  transition: left 500ms linear;
+  z-index: 1;
+  &.previous {
+    z-index: 2;
+    left: -200%;
+    display: block;
+  }
+  &.active {
+    left: 4%;
+    z-index: 3;
+    display: block;
+    transition: 500ms linear;
+    &.leftShift {
+      left: -$tileWidth / 3;
+    }
+  }
+  &.active ~ .series-page {
+    left: 100%;
+  }
+}
+
+.car-button {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: $tileHeight / 2;
+  width: $tileWidth / 4.4;
+  max-height: 180px;
+  cursor: pointer;
+  font-size: 3vw;
+  font-weight: 100;
+  text-align: center;
+  color: #fff;
+  z-index: 5;
+  display: none;
+  padding: $tileHeight / 4 0;
+}
+
+.index-row {
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    .cb-right {
+      display: block;
+      right: 0;
+      &:hover {
+        font-weight: 200;
+        transform: scale(1.2);
+      }
+    }
+
+    .cb-left {
+      left: 0;
+      display: block;
+      &:hover {
+        font-weight: 200;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.index-row-header {
+  color: #999;
+  padding: 0 4%;
+  font-size: 1.2vw;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1.3;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.index-row-inner {
+  width: 100%;
+  transition: $duration transform;
+  font-size: 0;
+  white-space: nowrap;
+  height: $tileHeight;
+  margin: 0.7vw 0 4vw;
+}
+
+.index-row-inner:hover .tile {
+  opacity: .3;
+  margin-bottom: $tileHeight / 4;
+  &:hover {
+    transform: scale($growSize);
+    opacity: 1;
+  }
+}
+
+.tile {
+  position: relative;
+  display: inline-block;
+  width: $tileWidth;
+  height: $tileHeight;
+  max-width: 330px;
+  max-height: 180px;
+  margin-right: $tileWidth / 7;
+  font-size: 20px;
+  transition: $duration all;
+  transform-origin: center left;
+}
+
+.tile:hover ~ .tile {
+  transform: translate3d($moveRight, 0, 0);
+}
+
+.tile-img {
+  object-fit: cover;
+  width: $tileWidth;
+  height: $tileHeight;
+  max-width: 330px;
+  max-height: 180px;
+}
+
+.tile-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 12px;
+  opacity: 0;
+  background: linear-gradient(to top,
+    rgba(0,0,0,0.9) 0%,
+    rgba(0,0,0,0), 100%);
+  transition: $duration opacity;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.play-button {
+  z-index: 5;
+  padding: 0vw 0.2vw 0 0.5vw;
+  border-radius: 100%;
+  border: 0.2vw solid #999;
+  font-size: 1.6vw;
+  color: #999;
+  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+    color: #DB0510;
+    border: 0.2vw solid #ECF0F1;
+  }
+}
+
+.tile-title {
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+  bottom: 0;
+  padding: .9vw 0 0.5vw 0;
+  color: #fff;
+  width: 100%;
+  font-size: 0.6vw;
+  white-space: normal;
+  font-weight: 400;
+  line-height: 1.3;
+  text-shadow: 1px 1px 2px black;
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+    .tile-add-list {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  }
+}
+
+.tile-episode {
+  cursor: pointer;
+  padding: .9vw .6vw;
+  color: #fff;
+  width: 80%;
+  font-size: 0.5vw;
+  white-space: normal;
+  font-weight: 400;
+  line-height: 1.3;
+  text-shadow: 1px 1px 2px black;
+}
+
+.tile-add-list {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+  font-size: 1vw;
+  margin: .8vw;
+  padding: 0 .3vw .1vw;
+  text-shadow: 1px 1px 2px black;
+  background: rgba(0,0,0,.7);
+  border-radius: 100%;
+  border: .1vw solid #fff;
+  color: #fff;
+  &:hover {
+    color: #000;
+    background: #fff;
+    transform: scale(1.1);
+  }
+}

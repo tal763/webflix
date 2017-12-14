@@ -17,7 +17,7 @@ const Navbar = ({ query, currentUser, logout, router }) => {
             <ul className='nav-dropdown'>
               <li className='nav-dropdown-item'>
                 <button className='sign-out'
-                  onClick={logout}>Sign out of NetClips</button>
+                  onClick={logout}>Sign out of webflix</button>
               </li>
             </ul>
           </div>

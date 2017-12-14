@@ -1,0 +1,75 @@
+.nav-header {
+  position: fixed;
+  display: block;
+  width: 100%;
+  background: rgba(0,0,0,.7);
+  z-index: 500;
+}
+
+.nav {
+  position: relative;
+}
+
+.nav-user {
+  padding-top: 20px;
+  padding-bottom: 27px;
+  float: right;
+  width: 80px;
+  color: #fff;
+  line-height: 1.2;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    .nav-dropdown {
+      display: block;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+    }
+  }
+}
+
+.nav-dropdown {
+  display: none;
+  border-top: 2px solid #fff;
+  background: rgba(0,0,0,.7);
+  width: 165px;
+}
+
+.nav-dropdown-item {
+  cursor: pointer;
+  padding: 1.5em 2em;
+  font-size: 12px;
+  color: #fff;
+  border-top: .1vw solid #ccc;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.sign-out {
+  cursor: pointer;
+}
+
+.search-bar {
+  float: right;
+  margin-right: 10px;
+  margin-top: 15px;
+  line-height: 1.2;
+  font-size: 16px;
+  font-weight: 200;
+  color: #fff;
+  border: 1px solid #ccc;
+}
+
+.mag {
+  float: left;
+  padding: 5px 2px;
+}
+
+.search-form {
+  float: right;
+  padding: 5px 10px;
+  font-size: 14px;
+}
